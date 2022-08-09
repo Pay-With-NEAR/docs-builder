@@ -1,3 +1,11 @@
 <h1>Hello, world!</h1>
 
 <div>I'm alive</div>
+
+{% for item in table_of_contents('pages/posts', 'asc') %}
+    <article>
+        <h1>{{ item.title }}</h1>
+        <small>{{ item.href }}</small>
+        <p>{{ item.preview|raw }}</p>
+    </article>
+{% endfor %}

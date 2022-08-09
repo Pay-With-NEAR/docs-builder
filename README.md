@@ -12,7 +12,7 @@ Twig static builder.
 $ docker run -v $(pwd)/dist/:/app/dist/ \
   -v $(pwd)/templates/:/app/templates \
   -v $(pwd)/assets/:/app/assets \
-  --user 1000:000 \
+  --user 1000:1000 \
   --env BUILD_DIR=dist \
   ghcr.io/pay-with-near/docs-builder:latest
 ```
