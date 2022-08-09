@@ -1,0 +1,26 @@
+{
+    "name": "paywithnear/docs",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Paywithnear\\Docs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexander Gorshkov",
+            "email": "agorshkov@mznx.ru"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0",
+        "symfony/flex": "^2.2",
+        "symfony/console": "^6.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
+}
