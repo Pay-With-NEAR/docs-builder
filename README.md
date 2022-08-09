@@ -20,3 +20,7 @@ $ docker run -v $(pwd)/dist/:/app/dist/ \
 As a result of the command execution, the assembled html files will appear in the `dist` folder.
 
 Now you can start the web server in the `dist` folder to get a working website with documentation.
+
+## Example
+
+See [PayWithNEAR Docs repo](https://github.com/Pay-With-NEAR/docs)
