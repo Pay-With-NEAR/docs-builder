@@ -32,6 +32,9 @@ class TableOfContents
         $result = [];
         foreach (FilesystemHelper::scanDir(Paths::TEMPLATES_DIRECTORY . $directoryToScan) as $file) {
             $templateName = str_replace(Paths::TEMPLATES_DIRECTORY, '', $file);
+            if (basename($templateName) === '_index.twig') {
+                continue; // skip _index.twig to prevent showing it in table of contents
+            }
 
             $template = $this->twig->load($templateName);
             $result[] = [
@@ -61,8 +64,8 @@ class TableOfContents
             }
 
             return $direction === self::ASCENDING
-                ? $first['filename'] <=> $second['filename']
-                : $second['filename'] <=> $first['filename'];
+                ? $first['_filename'] <=> $second['_filename']
+                : $second['_filename'] <=> $first['_filename'];
         });
 
         return array_map(
