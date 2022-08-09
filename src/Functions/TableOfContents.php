@@ -37,7 +37,7 @@ class TableOfContents
             $result[] = [
                 '_filename' => basename($templateName),
                 'title' => $template->hasBlock('title') ? $template->renderBlock('title') : null,
-                'time' => $template->hasBlock('time') ? $template->renderBlock('title') : null,
+                'time' => $template->hasBlock('time') ? (strtotime($template->renderBlock('time')) ?: null) : null,
                 'href' => self::resolveHref($templateName),
                 'preview' => $template->hasBlock('preview') ? $template->renderBlock('preview') : null,
             ];
